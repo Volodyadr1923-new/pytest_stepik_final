@@ -6,8 +6,6 @@ def test_guest_can_go_to_login_page(browser):
     page = MainPage(browser, link)   # инициализируем Page Object, передаем в конструктор экземпляр драйвера и url адрес
     page.open()                      # открываем страницу
     time.sleep(3)
-    #page.go_to_login_page()         # выполняем метод страницы — переходим на страницу логина
-    #page.should_be_login_link()      # метод, который будет проверять наличие ссылки
     login_page = page.go_to_login_page()
     time.sleep(3)
     login_page.should_be_login_page()
