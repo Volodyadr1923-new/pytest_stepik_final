@@ -10,6 +10,7 @@ def pytest_addoption(parser):
 def browser(request):
     # для запроса значения параметра вызовем команду:
     language_name = request.config.getoption("--language")
+    # чтобы указать язык браузера с помощью WebDriver, используйте класс Options и метод add_experimental_option
     options = Options()
     options.add_experimental_option('prefs', {'intl.accept_languages': language_name})
     print("\nstart browser for test..")
